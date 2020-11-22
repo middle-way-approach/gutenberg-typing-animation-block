@@ -3,7 +3,7 @@ Contributors: middle-way-approach
 Donate link: https://github.com/middle-way-approach/gutenberg-typing-animation-block
 Tags: typing animation, typewriter effect
 Requires at least: 5.0
-Tested up to: 5.2
+Tested up to: 5.5
 Stable tag: 1.0.0
 Requires PHP: 5.6
 License: GPLv2 or later
