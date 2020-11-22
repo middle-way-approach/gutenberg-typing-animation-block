@@ -37,14 +37,6 @@ function typing_animation_render_callback($attributes) {
  * @since 1.0.0
  */
 function typing_animation_block_cgb_block_assets() { // phpcs:ignore
-	// Register block styles for both frontend + backend.
-	/*wp_register_style(
-		'typing_animation_block-cgb-style-css', // Handle.
-		plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ), // Block style CSS.
-		array( 'wp-editor' ), // Dependency to include the CSS after it.
-		null // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' ) // Version: File modification time.
-	);*/
-
 	// Register block editor script for backend.
 	wp_register_script(
 		'typing_animation_block-cgb-block-js', // Handle.
@@ -53,14 +45,6 @@ function typing_animation_block_cgb_block_assets() { // phpcs:ignore
 		null, // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ), // Version: filemtime — Gets file modification time.
 		true // Enqueue the script in the footer.
 	);
-
-	// Register block editor styles for backend.
-	/*wp_register_style(
-		'typing_animation_block-cgb-block-editor-css', // Handle.
-		plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ), // Block editor CSS.
-		array( 'wp-edit-blocks' ), // Dependency to include the CSS after it.
-		null // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: File modification time.
-	);*/
 
 	// WP Localized globals. Use dynamic PHP stuff in JavaScript via `cgbGlobal` object.
 	wp_localize_script(
@@ -101,13 +85,9 @@ function typing_animation_block_cgb_block_assets() { // phpcs:ignore
 	 */
 	register_block_type(
 		'cgb/block-typing-animation-block', array(
-			// Enqueue blocks.style.build.css on both frontend & backend.
-			// 'style'         	=> 'typing_animation_block-cgb-style-css',
 			'script'			=>	array('typed-js', 'frontend-js'),
 			// Enqueue blocks.build.js in the editor only.
 			'editor_script' 	=> 'typing_animation_block-cgb-block-js',
-			// Enqueue blocks.editor.build.css in the editor only.
-			// 'editor_style'  	=> 'typing_animation_block-cgb-block-editor-css',
 			// The callback for rendering on server side.
 			'render_callback' 	=> 'typing_animation_render_callback'
 		)
