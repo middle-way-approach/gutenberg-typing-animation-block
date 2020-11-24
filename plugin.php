@@ -5,7 +5,7 @@
  * Description: A Gutenberg block to create a typing animation.
  * Author: middle-way-approach
  * Author URI: https://github.com/middle-way-approach
- * Version: 1.0.0
+ * Version: 1.1.0
  * License: GPL2+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.txt
  *
