@@ -3,6 +3,9 @@
  *
  * Registering a basic block with Gutenberg.
  */
+
+import './editor.scss';
+
 import Edit from './edit';
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
@@ -116,5 +119,8 @@ registerBlockType( 'cgb/block-typing-animation-block', {
 			type: 'string',
 			default: '|',
 		},
+	},
+	supports: {
+		align: true,
 	},
 } );

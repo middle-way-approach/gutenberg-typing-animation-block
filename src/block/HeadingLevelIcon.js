@@ -15,7 +15,7 @@ export default function HeadingLevelIcon( { element, __unstableActive } ) {
 	}
 
 	return (
-		<SVG width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" __unstableActive={ __unstableActive } >
+		<SVG width="20" height="20" xmlns="http://www.w3.org/2000/svg" __unstableActive={ __unstableActive } >
 			<Path d={ levelToPath[ element ] } />
 		</SVG>
 	);

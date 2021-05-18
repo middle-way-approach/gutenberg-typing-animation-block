@@ -65,6 +65,13 @@ function typing_animation_block_cgb_block_assets() { // phpcs:ignore
 		true // Enqueue the script in the footer.
 	);
 
+	wp_register_style(
+    		'typing_animation_block-cgb-block-editor-css', // Handle.
+    		plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ), // Block editor CSS.
+    		array( 'wp-edit-blocks' ), // Dependency to include the CSS after it.
+    		null // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: File modification time.
+    );
+
 	wp_register_script(
 		'frontend-js', // Handle.
 		plugins_url( '/src/frontend.js', dirname( __FILE__ ) ), // Block.build.js: We register the block here. Built with Webpack.
@@ -89,7 +96,9 @@ function typing_animation_block_cgb_block_assets() { // phpcs:ignore
 			// Enqueue blocks.build.js in the editor only.
 			'editor_script' 	=> 'typing_animation_block-cgb-block-js',
 			// The callback for rendering on server side.
-			'render_callback' 	=> 'typing_animation_render_callback'
+			'render_callback' 	=> 'typing_animation_render_callback',
+			// Enqueue blocks.editor.build.css in the editor only.
+        	'editor_style'  	=> 'typing_animation_block-cgb-block-editor-css'
 		)
 	);
 }
