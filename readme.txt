@@ -3,8 +3,8 @@ Contributors: middle-way-approach
 Donate link: https://github.com/middle-way-approach/gutenberg-typing-animation-block
 Tags: typing animation, typewriter effect
 Requires at least: 5.0
-Tested up to: 5.5
-Stable tag: 1.1.0
+Tested up to: 5.7
+Stable tag: 1.2.0
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -26,6 +26,11 @@ After you install and activate the plugin you can use it as a block in the Guten
 1. The position of the different parameters as explained in the description.
 
 == Changelog ==
+
+= 1.2 =
+* Test with newest Wordpress version
+* Fix some issues with 5.7
+
 
 = 1.1 =
 * Test with newest Wordpress version
