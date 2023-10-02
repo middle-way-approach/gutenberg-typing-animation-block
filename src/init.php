@@ -15,12 +15,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // TODO put into own file
 function typing_animation_render_callback($attributes) {
-	$element = $attributes['element'];
-	return sprintf('<%2$s class="typed-wrapper"><span class="typing-animation" data-options="%1$s" /></%2$s>',
-		htmlspecialchars(json_encode($attributes)),
-		 $element ? $element : 'h2'
-	);
+    // Check if 'element' key is set in $attributes, otherwise use 'h2' as default
+    $element = isset($attributes['element']) ? $attributes['element'] : 'h2';
+
+    // Check if 'data-options' key is set in $attributes, otherwise use an empty string as default
+    $data_options = isset($attributes['data-options']) ? $attributes['data-options'] : '';
+
+    return sprintf(
+        '<%2$s class="typed-wrapper"><span class="typing-animation" data-options="%1$s" /></%2$s>',
+        htmlspecialchars(json_encode($attributes)),
+        esc_html($element)
+    );
 }
+
 
 /**
  * Enqueue Gutenberg block assets for both frontend + backend.
